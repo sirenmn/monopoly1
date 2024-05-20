@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes breathing {
+                0% { font-size: 6em; }
+                50% { font-size: 6.5em; }
+                100% { font-size: 6em; }
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url('https://steamuserimages-a.akamaihd.net/ugc/2058741034012526093/D413A8F912EDED5B50A0B6A9DFFB2C3DBBFF76A2/');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                cursor: url('https://cursorstore.com/uploads/cursors/hoverOgBhaK.svg'), auto;
+            }
+
+            h1 {
+                color: brown;
+                text-shadow: 5px 5px     black;
+                font-family: "Old English Text MT";
+                font-size: 8em;
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: breathing 3s infinite alternate;
+            }
+
+            input[type="submit"] {
+                font-family: "Old English Text MT";
+                margin-top: 500px; /* Adjust the top margin to move the button down */
+                margin-left: 50px; /* Adjust the left margin to move the button right */
+                padding: 20px 60px; /* Adjust padding to increase button size */
+                font-size: 3em; /* Increase font size if needed */
+                color: brown;
+                background-color: rgba(49, 66, 51, 0.582); /* Adjust the alpha value (0.5) for transparency */
+                border: none;
+                border-radius: 50px;
+                cursor: url('https://cursorstore.com/uploads/cursors/hoverOgBhaK.svg'), auto;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            input[type="submit"]:hover {
+                transform: scale(1.5); /* Increase the scale factor to make it larger */
+            }
+
+            .container {
+                animation: fadeIn 2s ease-in-out;
+                text-shadow: 2px 2px #000000;
+                transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>General's Conquest</h1>
+            <form id="player-form">
+                <div id="token-selectors"></div>
+                <input type="submit" id="play-button" value="PLAY">
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("play-button").addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default form submission
+                var container = document.querySelector(".container");
+                container.style.opacity = "0"; // Fade out the container
+                setTimeout(function() {
+                    window.location.href = "MONOPOLY.html"; // Redirect after the fade out is complete
+                }, 500); // Adjust the delay to match the transition duration
+            });
+        </script>
+    </body>
+    </html>

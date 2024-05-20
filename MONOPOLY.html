@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>General's Conquest</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <style>
+     
+        @keyframes breathing {
+            0% { font-size: 6em; }
+            50% { font-size: 6.5em; }
+            100% { font-size: 6em; }
+        }
+       
+            @keyframes breathing {
+                0% { font-size: 6em; }
+                50% { font-size: 6.5em; }
+                100% { font-size: 6em; }
+            }
+
+        body {
+            background-color: #cde6d0;
+            font-family: 'Times New Roman', serif;
+            background-image: url('https://cdn.discordapp.com/attachments/1098226829246078987/1241685094263951401/thumb-1920-1353166.png?ex=664b18db&is=6649c75b&hm=0592a7bdf91e9a04877977cc6565815b9db514675c48b8de72a68d4b89220144&');
+            background-size: cover;
+            display: flex;
+        }
+        .button-container {
+            font-family: "Old English Text MT", serif;
+            position: absolute;
+            left: 0;
+            top: 20%;
+            transform: translateY(-50%);
+            margin-left: 20px; /* Adjust this value as needed for spacing */
+}
+
+
+
+        div {
+            box-sizing: border-box;
+            text-transform: uppercase;
+        }
+
+        .responsive {
+            background-color: transparent;
+            width: 60vw;
+            height: 50vw;
+            margin: 10px auto;
+        }
+
+        .mainSquare {
+            height: 100%;
+            box-shadow: 0px 0px 10px white;
+            
+            font-family:  'Mantinia', serif;
+            background-color: red(253, 245, 247, 0);
+            color:#ffdc73;
+            animation: fadeIn 4s ease forwards;
+            
+            
+			
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+        }
+
+        .top {
+            height: 15.384615385%;
+        }
+
+        .center {
+            height: 69.23076923%;
+        }
+		
+
+        .square1, .square2, .square9 {
+            position: relative;
+        }
+
+        .square1:before, .square2:before, .square9:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ffdc73;
+			font-size: 0.7vw;
+        }
+
+        .square9:before {
+            border: none;
+        }
+
+        .header {
+            height: 21%;
+            position: absolute;
+            outline: 1px solid white;
+            background: #8B4513; /* Dark Brown */
+            width: 100%;
+        }
+
+        .headerSide {
+            width: 20%;
+            position: absolute;
+            outline: 1px solid white;
+            
+        }
+
+        .header-top{
+            background: red /* Dark Brown */
+        }
+        .header-bottom {
+            background: #FA8072;
+        }
+
+        .header-left {
+            background:#800020; /* Peruvian Brown */
+        }
+        .header-right {
+            background:#023020 /* Peruvian Brown */
+        }
+        
+
+        .firstLine {
+            position: absolute;
+            font-size: 0.7vw;
+            font-weight: 500;
+            line-height: 1vw;
+            text-align: center;
+        }
+
+        .firstLine-top, .firstLine-bottom {
+            font-family: "Times New Roman", serif;
+        }
+
+        .firstLine {
+            position: absolute;
+            font-size: 1vw; /* Adjust the font size using vw units for responsiveness */
+            font-weight: 500;
+            line-height: 1.5vw; /* Adjust line height relative to font size */
+            text-align: center;
+        }
+
+        .corner {
+            position: absolute;
+            text-align: center;
+            font-size: 1.5vw; /* Adjust the font size using vw units for responsiveness */
+            font-weight: 500;
+            font-family: "Times New Roman", serif;
+        }
+
+        .corner1 {
+            font-size: 1.2vw; /* Adjust the font size using vw units for responsiveness */
+            top: 55%;
+            line-height: 2vw; /* Adjust line height relative to font size */
+        }
+
+        .corner4 {
+            font-size: 0.9vw; /* Adjust the font size using vw units for responsiveness */
+            top: 43%;
+            line-height: 1vw; /* Adjust line height relative to font size */
+            left: 20%;
+            transform:  translateX(1%) translateY(-35%);
+        }
+
+        .corner3 {
+            font-size: 1vw; /* Adjust the font size using vw units for responsiveness */
+            top:18%;
+            line-height: 1.5vw; /* Adjust line height relative to font size */
+            left: 20%;
+            transform: rotateZ(-50deg);
+        }
+        .corner2{
+            font-size: 1.4vw; /* Adjust the font size using vw units for responsiveness */
+            top:32%;
+            line-height: 1.5vw; /* Adjust line height relative to font size */
+            left: 20%;
+            transform: rotateZ(230deg);
+        }
+
+        .corner4-left, .corner4-bottom {
+            top: -1%;
+            font-size: 1vw; /* Adjust the font size using vw units for responsiveness */
+            line-height: 0.8vw; /* Adjust line height relative to font size */
+        }
+
+        .squareCorner {
+            height: 65%;
+            width: 65%;
+            border: 1px solid white;
+            right: -1px;
+            top: -1px;
+            position: absolute;
+        }
+
+        .logoBox {
+            width: 70%;
+            background: #ffdc73; 
+            position: absolute;
+            transform: rotateZ(-32deg) translateX(2%) translateY(175%);
+            border: 3px solid#ffdc73;
+            text-align: center;
+            box-shadow: inset 0px 2px 12px 0px white;
+            background-color: transparent;
+            color:#ffdc73;
+            font-size:0.5vw;
+            
+        }
+
+        .logoName {
+            font-size: 1vw;
+            color: #ffdc73;
+            font-family: "Old English Text MT", serif;
+            text-shadow: -5px 6px px #ffdc73;
+            
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #ffdc73;
+            animation: breathing 3s infinite alternate;
+           
+        }
+
+        .card-box {
+            position: absolute;
+            width: 15%;
+            height: 9vw;
+            background-color: transparent;
+        }
+
+        
+
+        .card-blue-inside {
+            background-color: transparent;
+            width: 94%;
+            height: 94%;
+            margin: 0.3vw auto;
+            position: relative;
+            
+        }
+
+        .card-blue {
+    background-color: transparent !important; /* Set background color to transparent */
+    transform: rotateZ(-30deg) translateX(15%) translateY(66%);
+    position: absolute;
+    width: 30%;
+}
+
+.card-orange {
+    background: transparent !important; /* Set background color to transparent */
+    transform: rotateZ(-30deg) translateX(-13%) translateY(610%);
+    position: absolute;
+    width: 30%;
+    left: -2vw;
+    bottom: 52vw;
+}
+        .card-box card orange{
+            background-color: transparent;
+
+        }
+
+        .firstLine-bottom {
+            font-size: 0.7vw; /* Adjust the font size using vw units for responsiveness */
+            font-weight: 500;
+            line-height: 1vw; /* Adjust line height relative to font size */
+            text-align: center;
+            margin-top: 10%; /* Adjust the margin-top as needed */
+        }
+        .firstLine-top {
+            font-size: 0.7vw; /* Adjust the font size using vw units for responsiveness */
+            font-weight: 500;
+            line-height: 1vw; /* Adjust line height relative to font size */
+            text-align: center;
+            margin-bottom: 30%; /* Adjust the margin-top as needed */
+        }
+		.firstLine-left {
+            font-size: 0.7vw; /* Adjust the font size using vw units for responsiveness */
+            font-weight: 500;
+            line-height: 1vw; /* Adjust line height relative to font size */
+            text-align: center;
+            margin-top: 10%; /* Adjust the margin-top as needed */
+        }
+		.firstLine-right{
+            font-size: 0.7vw; /* Adjust the font size using vw units for responsiveness */
+            font-weight: 500;
+            line-height: 1vw; /* Adjust line height relative to font size */
+            text-align: center;
+            margin-top: 10%; /* Adjust the margin-top as needed */
+        }
+    
+        .responsive {
+            position: relative; /* Ensure the board is a positioning context for the tokens */
+            width: 60vw; /* Adjust these dimensions as needed */
+            height: 50vw; /* Adjust these dimensions as needed */
+            margin: 10px auto;
+        }
+        .player-selection {
+            display: none; /* Hide initially */
+        }
+    
+        .token-option {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .token-option > div {
+            width: 24%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .token-option > div:hover {
+            background-color: #f0f0f0;
+        }
+        .token-option > div img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure the popup is on top of other elements */
+        }
+
+        .popup {
+            background-color: #fff0db;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        .option-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid red;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: pink;
+        }
+        .custom-button {
+            font-family:  'Mantinia', serif;
+    background-color: #ffdc73; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 25px;
+    animation: fadeIn 4s ease forwards;
+}
+
+.custom-button:hover {
+    background-color: black;
+    color:white;
+}
+.selected-token {
+    border: 2px solid blue;
+    background-color: #e0f7fa; /* Light blue background for selected token */
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+#play-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family:  'Mantinia', serif;
+    background-color: brown; 
+    border: none;
+    color: white;
+    border-radius: 25px;
+}
+
+/* Apply animation to player info container */
+#player-info-container {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    border-left: 1px solid #ccc;
+    padding: 20px;
+    overflow-y: auto;
+    animation: slideIn 0.5s ease forwards; /* Apply animation */
+}
+
+/* Define animation behavior */
+@keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        /* Apply fadeIn animation to player info container */
+        .player-info {
+            margin-bottom: 0px;
+            text-align: center;
+            opacity: 0; /* Initially hide the player info */
+            animation: fadeIn 0.5s ease forwards; /* Apply animation */
+        }
+
+.player-info h3 {
+    margin: 0 0 10px 0;
+}
+
+.disabled-token {
+    opacity: 0.5;
+    pointer-events: none; /* Prevent click events */
+}
+
+.player-info img {
+    max-width: 50px; /* Adjust the maximum width of the token images */
+}
+.token {
+    width: 20px;
+    height: 20px;
+    background-color: red; /* Customize token appearance */
+    border-radius: 50%; /* Make tokens circular */
+    margin: 5px; /* Adjust spacing between tokens */
+}
+@keyframes roll {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 80px;
+    background-color: transparent; /* Set background color to transparent */
+    border: none; /* Remove border */
+}
+#roll-dice-button {
+    display: none; /* Initially hide the Roll Dice button */
+    animation: fadeIn 3s ease forwards;
+}
+
+    </style>
+</head>
+<body>  
+    
+    <div class="responsive" id="board">
+        
+        
+        <div class="mainSquare">
+         
+            <div class="row top">
+                <div class="square2"><span class="corner corner1">Safe <br /> House</span></div>
+                <div class="square1">
+                    <div class="header header-top red"></div>
+                    <div class="firstLine firstLine-top">Northern <br /> Territory</div>
+                    
+                </div>
+                <div class="square1">                    
+                    <div class="firstLine firstLine-top no-color">Event</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-top red"></div>
+                    <div class="firstLine firstLine-top">Western <br /> Territory</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-top red"></div>
+                    <div class="firstLine firstLine-top">Eastern <br /> Territory</div>
+                </div>
+                <div class="square1">
+                    <div class="firstLine firstLine-top no-color">Strategic <br /> Base</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-top yellow"></div>
+                    <div class="firstLine firstLine-top">Trade <br /> Route</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-top yellow"></div>
+                    <div class="firstLine firstLine-top">Resource <br /> Depot</div>
+                </div>
+                <div class="square1">                    
+                    <div class="firstLine firstLine-top no-color">Water <br /> Source</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-top yellow"></div>
+                    <div class="firstLine firstLine-top">Central <br /> Market</div>
+                </div>
+                <div class="square2"><span class="corner corner2">Go to<br />Prison</span></div>
+            </div>
+            
+            <div class="row center">
+                <div class="square2">
+                    <div class="squareSide">
+                        <div class="headerSide header-left orange"></div>
+                        <div class="firstLine firstLine-left">Mountain <br /> Region</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-left orange"></div>
+                        <div class="firstLine firstLine-left">Bridge <br /> Crossing</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="firstLine firstLine-left no-color">Fort</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-left orange"></div>
+                        <div class="firstLine firstLine-left">Royal <br /> Street</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="firstLine firstLine-left no-color">Guild <br /> Hall</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-left purple"></div>
+                        <div class="firstLine firstLine-left">Arcane <br /> Alley</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-left purple"></div>
+                        <div class="firstLine firstLine-left">Sorcerer's <br /> Place</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="firstLine firstLine-left no-color">Mystic <br /> Lab</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-left purple"></div>
+                        <div class="firstLine firstLine-left">Wizard's <br /> Way</div>
+                    </div>
+                </div>
+                <div class="square9">
+                    <div class="card-box card-blue">
+                        <div class="card-blue-inside"></div>
+                    </div>
+                    <div class="logoBox">
+                        <span class="logoName">GENERAL'S CONQUEST</span>
+                    </div>
+                    <div class="card-box card-orange">
+                        <div class="card-orange-inside"></div>                        
+                    </div>
+                </div>
+                <div class="square2">
+                    <div class="squareSide">
+                        <div class="headerSide header-right green"></div>
+                        <div class="firstLine firstLine-right">Forest <br /> Path</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-right green"></div>
+                        <div class="firstLine firstLine-right">Dragon <br /> Den</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="firstLine firstLine-right no-color">Barracks</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-right green"></div>
+                        <div class="firstLine firstLine-right">King's <br /> Road</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="firstLine firstLine-right no-color">Traveller's <br /> Inn</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="firstLine firstLine-right no-color">Outpost</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="headerSide header-right blue"></div>
+                        <div class="firstLine firstLine-right">Noble's <br /> Estate</div>
+                    </div>
+                    <div class="squareSide">                        
+                        <div class="firstLine firstLine-right no-color">War <br /> Tax</div>
+                    </div>
+                    <div class="squareSide">
+                        <div class="headerSide header-right blue"></div>
+                        <div class="firstLine firstLine-right">Emperor's <br /> Palace</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row top">
+                <div class="square2">
+                    <span class="corner4-left">Prison</span>
+                    <div class="squareCorner">
+                        <span class="corner corner4">Dungeon</span>
+                    </div>
+                    <span class="corner4-bottom">Visitor</span>
+                </div>
+                <div class="square1">
+                    <div class="header header-bottom lightblue"></div>
+                    <div class="firstLine firstLine-bottom">Harvest <br /> Grounds</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-bottom lightblue"></div>
+                    <div class="firstLine firstLine-bottom">Farmland</div>
+                </div>
+                <div class="square1">
+                    <div class="firstLine firstLine-bottom no-color">Event</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-bottom lightblue"></div>
+                    <div class="firstLine firstLine-bottom">Grain <br /> Storage</div>
+                </div>
+                <div class="square1">                    
+                    <div class="firstLine firstLine-bottom no-color">Trade <br /> Route</div>
+                </div>
+                <div class="square1">
+                    <div class="firstLine firstLine-bottom no-color">Tribute</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-bottom brown"></div>
+                    <div class="firstLine firstLine-bottom">Merchant <br /> Quarter</div>
+                </div>
+                <div class="square1">
+                    <div class="firstLine firstLine-bottom no-color">Inn</div>
+                </div>
+                <div class="square1">
+                    <div class="header header-bottom brown"></div>
+                    <div class="firstLine firstLine-bottom">Peasant's <br /> Path</div>
+                </div>
+                <div class="square2">
+                    <span class="corner corner3">Collect <br />Tribute</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="button-container">
+        <button id="select-players" class="custom-button">Select Number of Players</button>
+
+    </div>
+  
+        
+        <div class="popup-container" id="popup-container">
+            <div class="popup" id="popup">
+                <div class="option-container" id="option-container"></div>
+                <div class="token-container" id="token-container"></div>
+                <button id="play-button">Play</button>
+            </div>
+        </div>
+        <div id="player-info-container"></div>
+        <div class="button-container">
+            <img id="roll-dice-button" class="dice" src="https://cdn.discordapp.com/attachments/1098226829246078987/1241671676169552015/4bafdc094573bc82840bfcd05bc92cde_w200.gif?ex=664b0c5c&is=6649badc&hm=50b3886dd3731098aa73a5c9cf6786b07750117341f97d8092cb379ae0665599&" alt="Roll Dice">
+        </div>
+     
+        <script>
+            let currentPlayer = 0; // Start with the first player
+
+    document.getElementById('select-players').addEventListener('click', function() {
+    // Show the popup
+    document.getElementById('popup-container').style.display = 'flex';
+
+    // Clear previous options if any
+    document.getElementById('option-container').innerHTML = '';
+    document.getElementById('token-container').innerHTML = ''; // Clear token container as well
+
+    // Array of options
+    var options = ['2 Players', '3 Players', '4 Players'];
+
+    // Create options dynamically
+    options.forEach(function(option) {
+        var optionElement = document.createElement('div');
+        optionElement.classList.add('option');
+        optionElement.textContent = option;
+        optionElement.addEventListener('click', function() {
+            // Call the function to show token options based on the selected number of players
+            showTokenOptions(parseInt(option));
+        });
+        document.getElementById('option-container').appendChild(optionElement);
+    });
+});
+
+function showTokenOptions(numPlayers) {
+    // Clear previous token options if any
+    document.getElementById('token-container').innerHTML = '';
+
+    // Array of tokens
+    var tokens = ['medic.png', 'compass.png', 'binoculars.png', 'medal.png']; // Customize with your token images or names
+
+    // Create flexboxes with tokens dynamically
+    for (var i = 0; i < numPlayers; i++) {
+        var playerLabel = document.createElement('div');
+        playerLabel.textContent = 'Player ' + (i + 1) + ':';
+        playerLabel.style.marginBottom = '5px'; // Add some spacing between the label and the tokens
+        document.getElementById('token-container').appendChild(playerLabel);
+
+        var tokenElement = document.createElement('div');
+        tokenElement.classList.add('token-option');
+        tokenElement.dataset.player = i + 1; // Add player number to the token option
+
+        for (var j = 0; j < tokens.length; j++) {
+            var tokenBox = document.createElement('div');
+            tokenBox.classList.add('token-box');
+            // Create an image element for each token
+            var tokenImage = document.createElement('img');
+            tokenImage.src = tokens[j];
+            tokenBox.appendChild(tokenImage);
+            tokenBox.addEventListener('click', function() {
+                // Get the player number from the parent token option
+                var playerNumber = this.parentElement.dataset.player;
+
+                // Remove highlight from all tokens for this player
+                var siblingTokens = document.querySelectorAll('[data-player="' + playerNumber + '"] .token-box');
+                siblingTokens.forEach(function(token) {
+                    token.classList.remove('selected-token');
+                });
+
+                // Highlight the selected token
+                this.classList.add('selected-token');
+
+                // Disable the selected token for other players
+                var selectedTokenSrc = this.querySelector('img').src;
+                var allTokenBoxes = document.querySelectorAll('.token-box img');
+                allTokenBoxes.forEach(function(img) {
+                    if (img.src === selectedTokenSrc && !img.parentElement.classList.contains('selected-token')) {
+                        img.parentElement.classList.add('disabled-token');
+                    }
+                });
+            });
+            tokenElement.appendChild(tokenBox);
+        }
+        document.getElementById('token-container').appendChild(tokenElement);
+    }
+    // Make sure the token options are visible
+    document.getElementById('token-container').style.display = 'block';
+
+    // Show the play button
+    document.getElementById('play-button').style.display = 'block';
+}
+
+document.getElementById('play-button').addEventListener('click', function() {
+    var playerInfoContainer = document.getElementById('player-info-container');
+    playerInfoContainer.innerHTML = ''; // Clear previous player info
+
+    // Get all selected tokens
+    var selectedTokens = document.querySelectorAll('.selected-token');
+    selectedTokens.forEach(function(token, index) {
+        var playerInfo = document.createElement('div');
+        playerInfo.classList.add('player-info');
+
+        var playerTitle = document.createElement('h3');
+        playerTitle.textContent = 'Player ' + (index + 1);
+        playerInfo.appendChild(playerTitle);
+
+        var tokenImage = token.querySelector('img').cloneNode();
+        playerInfo.appendChild(tokenImage);
+
+        playerInfoContainer.appendChild(playerInfo);
+    });
+
+    // Show the player info container
+    playerInfoContainer.style.display = 'block';
+
+    // Hide the popup
+    document.getElementById('popup-container').style.display = 'none';
+});
+
+document.getElementById('play-button').addEventListener('click', function() {
+    var selectedTokens = document.querySelectorAll('.selected-token img');
+    var numPlayers = selectedTokens.length;
+    var square2 = document.querySelector('.square2');
+
+    // Generate tokens for each player
+    for (var i = 0; i < numPlayers; i++) {
+        var tokenImage = selectedTokens[i].cloneNode(true); // Clone the selected token image
+        tokenImage.classList.add('token');
+        tokenImage.alt = 'Token ' + (i + 1); // Set alt text if necessary
+        tokenImage.dataset.player = i; // Set player index
+        square2.appendChild(tokenImage); // Append token image to square2
+    }
+    document.getElementById('select-players').style.display = 'none';
+    document.getElementById('roll-dice-button').style.display = 'block';
+});
+
+document.getElementById('roll-dice-button').addEventListener('click', function() {
+   
+    var diceResult = Math.floor(Math.random() * 6) + 1;
+    alert('Player ' + (currentPlayer + 1) + ' rolled a ' + diceResult + '!');
+    // Move current player's token based on the dice result
+    movePlayerToken(diceResult);
+
+    // Update the current player
+    currentPlayer = (currentPlayer + 1) % document.querySelectorAll('.selected-token').length;
+});
+
+function movePlayerToken(steps) {
+    // Get the current player's token
+    var token = document.querySelector(`.token[data-player="${currentPlayer}"]`);
+
+    // Get the current square of the token
+    var currentSquare = token.parentElement;
+    var currentRow = currentSquare.parentElement; // Get the current row
+
+    // Move the token by the specified number of steps
+    for (var i = 0; i < steps; i++) {
+        // Move to the next square (or loop back to the beginning if at the end)
+        currentSquare = currentSquare.nextElementSibling || currentSquare.parentElement.firstElementChild;
+
+        // If reached the end of the row, move to the next row
+        if (!currentSquare) {
+            currentRow = currentRow.nextElementSibling || currentRow.parentElement.firstElementChild; // Move to the next row
+            currentSquare = currentRow.firstElementChild; // Move to the first square of the next row
+        }
+    }
+
+    // Append the token to the new square
+    currentSquare.appendChild(token);
+}
+
+function initializeGame() {
+    // Initialize game setup here if necessary
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeGame();
+});
+</script>
+</body>
+</html>
+        
